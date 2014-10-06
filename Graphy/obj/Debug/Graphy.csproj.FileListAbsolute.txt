@@ -1,0 +1,54 @@
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Graphy.exe
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Graphy.pdb
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Graphy.exe.CodeAnalysisLog.xml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Graphy.exe.lastcodeanalysissucceeded
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\GalaSoft.MvvmLight.dll
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\System.Windows.Interactivity.dll
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\GalaSoft.MvvmLight.pdb
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\GalaSoft.MvvmLight.xml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\bin\Debug\System.Windows.Interactivity.xml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy.csprojResolveAssemblyReference.cache
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\MainWindow.baml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Skins\MainSkin.baml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\MainWindow.g.cs
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\App.g.cs
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy_MarkupCompile.cache
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy_MarkupCompile.lref
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\App.baml
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy.g.resources
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy.Properties.Resources.resources
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy.csproj.GenerateResource.Cache
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy.exe
+c:\users\box\documents\visual studio 2013\Projects\Graphy\obj\Debug\Graphy.pdb
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.exe
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.pdb
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\Graphy.exe
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\Graphy.pdb
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\Graphy.exe.CodeAnalysisLog.xml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\Graphy.exe.lastcodeanalysissucceeded
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.csprojResolveAssemblyReference.cache
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\MainWindow.baml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Skins\MainSkin.baml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\MainWindow.g.cs
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\App.g.cs
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy_MarkupCompile.cache
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy_MarkupCompile.lref
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\App.baml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.g.resources
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.Properties.Resources.resources
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.csproj.GenerateResource.Cache
