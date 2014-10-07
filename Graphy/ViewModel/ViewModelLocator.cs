@@ -39,6 +39,7 @@ namespace Graphy.ViewModel
             //}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<SumViewModel>();
         }
 
         /// <summary>
@@ -52,6 +53,14 @@ namespace Graphy.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+
+        public SumViewModel Sum
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<SumViewModel>();
             }
         }
 

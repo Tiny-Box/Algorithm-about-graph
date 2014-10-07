@@ -18,13 +18,28 @@ namespace Graphy.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+
         public RelayCommand Open
         {
             get;
             set;
         }
-
-        public RelayCommand ModifyC
+        public RelayCommand GetGray
+        {
+            get;
+            set;
+        }
+        public RelayCommand Bayer
+        {
+            get;
+            set;
+        }
+        public RelayCommand Floyd
+        {
+            get;
+            set;
+        }
+        public RelayCommand GraySum
         {
             get;
             set;
@@ -74,7 +89,7 @@ namespace Graphy.ViewModel
             dlg.ShowDialog();
 
             fileName = dlg.FileName;
-            //MessageBox.Show(dlg.FileName);
+           
             Originpic = dlg.FileName;
         }
 
@@ -89,7 +104,14 @@ namespace Graphy.ViewModel
 
             Open = new RelayCommand(() => Openpic());
 
-            ModifyC = new RelayCommand(() => Modifyimg = gray.DitherFloydSteinberg(new BitmapImage(new Uri(fileName))));
+            GetGray = new RelayCommand(() => Modifyimg = gray.GrayFilter(new BitmapImage(new Uri(fileName))));
+
+            Bayer = new RelayCommand(() => Modifyimg = gray.LimbPatternBayer(new BitmapImage(new Uri(fileName))));
+
+            Floyd = new RelayCommand(() => Modifyimg = gray.DitherFloydSteinberg(new BitmapImage(new Uri(fileName))));
+
+            GraySum = new RelayCommand(() => gray.GraySum(new BitmapImage(new Uri(fileName))));
+
         }
 
         ////public override void Cleanup()

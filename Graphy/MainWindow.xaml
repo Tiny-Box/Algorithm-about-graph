@@ -21,7 +21,22 @@
     <Grid x:Name="LayoutRoot">
         <Image x:Name="origin" Source="{Binding Originpic}" HorizontalAlignment="Left" Height="960" Width="720" Margin="61,61,0,0" VerticalAlignment="Top" />
         <Image x:Name="modify" Source="{Binding Modifyimg}" HorizontalAlignment="Left" Height="960" Width="720" Margin="786.84,61,-614.84,-452" VerticalAlignment="Top" />
-        <Button Command="{Binding Open}" Content="Open" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="Modify" Click="Open_Click" Content="Modify" HorizontalAlignment="Left" Margin="103.017,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Menu HorizontalAlignment="Left" Height="22.719" VerticalAlignment="Top" Width="444.628">
+            <MenuItem FontSize="16" FontFamily="SimSun" Header="文件">
+                <MenuItem Header="打开" Command="{Binding Open}"/>
+                <Separator/>
+                <MenuItem Header="退出"/>
+            </MenuItem>
+            <MenuItem FontSize="16" FontFamily="SimSun" Header="编辑">
+                <MenuItem Header="生成灰度图">
+                    <MenuItem Header="浮点计算法" Command="{Binding GetGray}" CommandParameter="{Binding FileName}"/>
+                    <MenuItem Header="Bayer抖动法" Command="{Binding Bayer}" CommandParameter="{Binding FileName}"/>
+                    <MenuItem Header="Floyd-Steinberg抖动法" Command="{Binding Floyd}" CommandParameter="{Binding FileName}"/>
+                    <MenuItem Header="灰度统计" Command="{Binding GraySum}" CommandParameter="{Binding FileName}"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

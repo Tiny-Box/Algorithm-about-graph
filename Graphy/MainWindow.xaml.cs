@@ -41,9 +41,7 @@ namespace Graphy
         {
             Modify gray = new Model.Modify();
             Uri fileUri = new Uri(fileName);
-            BitmapFrame img = BitmapFrame.Create(fileUri);
-            BitmapDecoder decoder = BitmapDecoder.Create(fileUri, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
-            modify.Source = gray.DitherFloydSteinberg(new BitmapImage(fileUri));
+            modify.Source = gray.GrayFilter(new BitmapImage(fileUri));
 
         }
 
