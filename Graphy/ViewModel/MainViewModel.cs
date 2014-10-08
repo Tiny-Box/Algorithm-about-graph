@@ -44,6 +44,11 @@ namespace Graphy.ViewModel
             get;
             set;
         }
+        public RelayCommand GrayThre
+        {
+            get;
+            set;
+        }
 
         private string fileName = string.Empty;
         public string FileName
@@ -111,6 +116,8 @@ namespace Graphy.ViewModel
             Floyd = new RelayCommand(() => Modifyimg = gray.DitherFloydSteinberg(new BitmapImage(new Uri(fileName))));
 
             GraySum = new RelayCommand(() => gray.GraySum(new BitmapImage(new Uri(fileName))));
+
+            GrayThre = new RelayCommand(() => Modifyimg = gray.ThresholdTrans(new BitmapImage(new Uri(fileName))));
 
         }
 

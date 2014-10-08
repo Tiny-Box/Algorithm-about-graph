@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
+using System.Windows;
 using System.Windows.Media;
 
 namespace Graphy.ViewModel
@@ -49,6 +50,9 @@ namespace Graphy.ViewModel
         {
             Messenger.Default.Register<PathFigure>(this, "Sum", n => temp = n);
 
+            MessageBox.Show("StartPoint: " + temp.StartPoint.X.ToString() + " " + temp.StartPoint.Y.ToString());
+
+            
             Plot = new RelayCommand(() => plot());
         }
     }

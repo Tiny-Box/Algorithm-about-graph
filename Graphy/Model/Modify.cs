@@ -236,7 +236,7 @@ namespace Graphy.Model
             // 复制像素到像素数组
             bitmapSource.CopyPixels(Int32Rect.Empty, pixels, stride, 0);
 
-            MessageBox.Show("Width: " + bitmapSource.Width.ToString() + "PixelWidth: " + bitmapSource.PixelWidth.ToString() + "other: " + bitmapSource.DecodePixelWidth.ToString() + "Bit: " + pixelFormat.BitsPerPixel.ToString());
+            //MessageBox.Show("Width: " + bitmapSource.Width.ToString() + "PixelWidth: " + bitmapSource.PixelWidth.ToString() + "other: " + bitmapSource.DecodePixelWidth.ToString() + "Bit: " + pixelFormat.BitsPerPixel.ToString());
 
             //gray=BYTE(0.299*red)+BYTE(0.587*green)+BYTE(0.114*blue); 
 
@@ -271,11 +271,13 @@ namespace Graphy.Model
             {
                 Max = (Max > GraySum[i]) ? Max : GraySum[i];
             }
+            MessageBox.Show(Max.ToString());
 
             PathFigure pathFigure = new PathFigure();
 
-            double Xr = (300 - 0) / (Max - 0);
-            Matrix matrix1 = new Matrix(Xr, 0, 0, 0, 0, 0);
+            double Xr = (300 - 0) / (256 - 0);
+            double Yr = (300 - 0) / (Max - 0);
+            Matrix matrix1 = new Matrix(Xr, 0, 0, Yr, 0, 0);
             
             Point[] Sum = new Point[GraySum.Length];
             for (int i = 0; i < 256; i++)
@@ -283,6 +285,7 @@ namespace Graphy.Model
                 Sum[i] = Point.Multiply(new Point(i, GraySum[i]), matrix1);
             }
             pathFigure.StartPoint = Point.Multiply(new Point(0, GraySum[0]), matrix1);
+            MessageBox.Show(pathFigure.StartPoint.X.ToString() + " " + pathFigure.StartPoint.Y.ToString());
             PolyLineSegment myPolyLineSegment = new PolyLineSegment();
             myPolyLineSegment.Points = new PointCollection(Sum);
 
@@ -290,10 +293,48 @@ namespace Graphy.Model
 
             Messenger.Default.Send<PathFigure>(pathFigure, "Sum");
 
+            MessageBox.Show("Point: " + Sum[25].X.ToString() + " " + Sum[25].Y.ToString());
+
             SumGra Gray = new SumGra();
             Gray.Show();
             
 
+        }
+
+        // 灰度阈值
+        public WriteableBitmap ThresholdTrans(BitmapImage bitmapSource)
+        {
+            // 图像的宽度和高度
+            int width = bitmapSource.PixelWidth;
+            int height = bitmapSource.PixelHeight;
+            // 图像的格式
+            PixelFormat pixelFormat = bitmapSource.Format;
+            // 每行的字节
+            int stride = (width * pixelFormat.BitsPerPixel + 7) / 8;
+            // 调色板
+            BitmapPalette Palette = new BitmapPalette(bitmapSource, 256);
+            // 像素数组
+            byte[] pixels = new byte[stride * height];
+            // 阈值
+            byte Thre = 128;
+
+            // 复制像素到像素数组
+            bitmapSource.CopyPixels(Int32Rect.Empty, pixels, stride, 0);
+
+            MessageBox.Show("Width: " + bitmapSource.Width.ToString() + "PixelWidth: " + bitmapSource.PixelWidth.ToString() + "other: " + bitmapSource.DecodePixelWidth.ToString() + "Bit: " + pixelFormat.BitsPerPixel.ToString());
+
+            //gray=BYTE(0.299*red)+BYTE(0.587*green)+BYTE(0.114*blue); 
+
+            for (int i = 0; i < pixels.LongLength; i += 4)
+            {
+                byte gray = ( (byte)(0.299 * pixels[i] + 0.587 * pixels[i + 1] + 0.114 * pixels[i + 2]) > Thre )? (byte)255 : (byte)0;
+                pixels[i] = gray;
+                pixels[i + 1] = gray;
+                pixels[i + 2] = gray;
+            }
+
+            WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, null, pixels, stride));
+            return bitmap;
         }
     }
 }
