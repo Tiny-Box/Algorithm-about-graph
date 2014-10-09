@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
         mc:Ignorable="d ignore"
-        Width="312" Height="352"
+        Width="325" Height="350"
         DataContext="{Binding Sum, Source={StaticResource Locator}}">
 
     <Grid>
-        <Canvas Margin="0, 22" Width="300" Height="300">
-            <Path Data="{Binding myPathGeometry}"></Path>
+        <Canvas Margin="0, 10" Width="300" Height="300" Background="#FFBEC0C2">
+            <Path Data="{Binding myPathGeometry}" Stroke="Black" StrokeThickness="1" ></Path>
         </Canvas>
-        <Button Command="{Binding Plot}" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
+        
     </Grid>
 </Window>

@@ -115,7 +115,7 @@ namespace Graphy.ViewModel
 
             Floyd = new RelayCommand(() => Modifyimg = gray.DitherFloydSteinberg(new BitmapImage(new Uri(fileName))));
 
-            GraySum = new RelayCommand(() => gray.GraySum(new BitmapImage(new Uri(fileName))));
+            GraySum = new RelayCommand(() => gray.GraySumMethod(new BitmapImage(new Uri(fileName))));
 
             GrayThre = new RelayCommand(() => Modifyimg = gray.ThresholdTrans(new BitmapImage(new Uri(fileName))));
 

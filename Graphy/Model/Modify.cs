@@ -13,6 +13,8 @@ namespace Graphy.Model
 {
     class Modify
     {
+        public static double[] GraySum = new double[256];
+
         public FormatConvertedBitmap FormatConvertedBitmapExample(string uri)
         {
             BitmapImage myBitmapImage = new BitmapImage();
@@ -219,7 +221,7 @@ namespace Graphy.Model
         }
 
         // 灰度统计
-        public void GraySum(BitmapImage bitmapSource)
+        public void GraySumMethod(BitmapImage bitmapSource)
         {
             // 图像的宽度和高度
             int width = bitmapSource.PixelWidth;
@@ -250,7 +252,7 @@ namespace Graphy.Model
 
             
 
-            double[] GraySum = new double[256];
+            
 
             // 初始化
             for (int i = 0; i < 256; i++ )
@@ -264,36 +266,42 @@ namespace Graphy.Model
                 GraySum[pixels[i]] += 1;
             }
 
-            double Max = 0;
+            //double Max = 0;
+            //double Tab = 0;
 
-            // 取最大值
-            for (int i = 0; i < GraySum.Length; i++)
-            {
-                Max = (Max > GraySum[i]) ? Max : GraySum[i];
-            }
-            MessageBox.Show(Max.ToString());
-
-            PathFigure pathFigure = new PathFigure();
-
-            double Xr = (300 - 0) / (256 - 0);
-            double Yr = (300 - 0) / (Max - 0);
-            Matrix matrix1 = new Matrix(Xr, 0, 0, Yr, 0, 0);
+            //// 取最大值
+            //for (int i = 0; i < GraySum.Length; i++)
+            //{
+            //    Tab = (Max > GraySum[i]) ? Tab : i;
+            //    Max = (Max > GraySum[i]) ? Max : GraySum[i];
+            //}
+            //MessageBox.Show(pixels.Length.ToString());
+            //MessageBox.Show(Max.ToString() + " " + Tab.ToString());
+            //MessageBox.Show("50 " + GraySum[50].ToString());
+            //MessageBox.Show("100 " + GraySum[100].ToString());
             
-            Point[] Sum = new Point[GraySum.Length];
-            for (int i = 0; i < 256; i++)
-            {
-                Sum[i] = Point.Multiply(new Point(i, GraySum[i]), matrix1);
-            }
-            pathFigure.StartPoint = Point.Multiply(new Point(0, GraySum[0]), matrix1);
-            MessageBox.Show(pathFigure.StartPoint.X.ToString() + " " + pathFigure.StartPoint.Y.ToString());
-            PolyLineSegment myPolyLineSegment = new PolyLineSegment();
-            myPolyLineSegment.Points = new PointCollection(Sum);
 
-            pathFigure.Segments.Add(myPolyLineSegment);
+            //PathFigure pathFigure = new PathFigure();
 
-            Messenger.Default.Send<PathFigure>(pathFigure, "Sum");
+            //double Xr = (300 - 0) / (256 - 0);
+            //double Yr = (300 - 0) / (Max - 0);
+            //Matrix matrix1 = new Matrix(Xr, 0, 0, Yr, 0, 0);
+            
+            //Point[] Sum = new Point[GraySum.Length];
+            //for (int i = 0; i < 256; i++)
+            //{
+            //    Sum[i] = Point.Multiply(new Point(i, GraySum[i]), matrix1);
+            //}
+            //pathFigure.StartPoint = Point.Multiply(new Point(0, GraySum[0]), matrix1);
+            //MessageBox.Show(pathFigure.StartPoint.X.ToString() + " " + pathFigure.StartPoint.Y.ToString());
+            //PolyLineSegment myPolyLineSegment = new PolyLineSegment();
+            //myPolyLineSegment.Points = new PointCollection(Sum);
 
-            MessageBox.Show("Point: " + Sum[25].X.ToString() + " " + Sum[25].Y.ToString());
+            //pathFigure.Segments.Add(myPolyLineSegment);
+
+            //Messenger.Default.Send<PathFigure>(pathFigure, "Sum");
+
+            //MessageBox.Show("Point: " + Sum[25].X.ToString() + " " + Sum[25].Y.ToString());
 
             SumGra Gray = new SumGra();
             Gray.Show();
