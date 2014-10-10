@@ -94,6 +94,8 @@ namespace Graphy.ViewModel
             dlg.ShowDialog();
 
             fileName = dlg.FileName;
+
+            gray.Sum(fileName);
            
             Originpic = dlg.FileName;
         }
