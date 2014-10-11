@@ -34,6 +34,7 @@
                     <MenuItem Header="Floyd-Steinberg抖动法" Command="{Binding Floyd}" CommandParameter="{Binding FileName}"/>
                     <MenuItem Header="灰度统计" Command="{Binding GraySum}" CommandParameter="{Binding FileName}"/>
                     <MenuItem Header="灰度阈值" Command="{Binding GrayThre}" CommandParameter="{Binding FileName}" />
+                    <MenuItem Header="反色" Command="{Binding LinerTrans}" CommandParameter="{Binding FileName}"/>
                 </MenuItem>
                 <Separator/>
                 <MenuItem/>

@@ -74,7 +74,7 @@ namespace Graphy.ViewModel
         }
 
 
-        void plot()
+        void Grayplot()
         {
             
 
@@ -115,7 +115,7 @@ namespace Graphy.ViewModel
 
             //MessageBox.Show("Point: " + Sum[25].X.ToString() + " " + Sum[25].Y.ToString());
 
-            
+            _Gray.Clear();
             Gray.Figures.Add(pathFigure);
         }
 
@@ -129,7 +129,7 @@ namespace Graphy.ViewModel
 
 
 
-            plot();
+            Grayplot();
         }
     }
 }

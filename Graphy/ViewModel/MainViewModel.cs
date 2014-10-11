@@ -49,6 +49,11 @@ namespace Graphy.ViewModel
             get;
             set;
         }
+        public RelayCommand LinerTrans
+        {
+            get;
+            set;
+        }
 
         private string fileName = string.Empty;
         public string FileName
@@ -95,7 +100,8 @@ namespace Graphy.ViewModel
 
             fileName = dlg.FileName;
 
-            gray.Sum(fileName);
+            gray.Cleanup();
+            gray.Init(fileName);
            
             Originpic = dlg.FileName;
         }
@@ -111,15 +117,17 @@ namespace Graphy.ViewModel
 
             Open = new RelayCommand(() => Openpic());
 
-            GetGray = new RelayCommand(() => Modifyimg = gray.GrayFilter(new BitmapImage(new Uri(fileName))));
+            GetGray = new RelayCommand(() => Modifyimg = gray.GrayFilter());
 
-            Bayer = new RelayCommand(() => Modifyimg = gray.LimbPatternBayer(new BitmapImage(new Uri(fileName))));
+            Bayer = new RelayCommand(() => Modifyimg = gray.LimbPatternBayer());
 
-            Floyd = new RelayCommand(() => Modifyimg = gray.DitherFloydSteinberg(new BitmapImage(new Uri(fileName))));
+            Floyd = new RelayCommand(() => Modifyimg = gray.DitherFloydSteinberg());
 
-            GraySum = new RelayCommand(() => gray.GraySumMethod(new BitmapImage(new Uri(fileName))));
+            GraySum = new RelayCommand(() => gray.GraySumMethod());
 
-            GrayThre = new RelayCommand(() => Modifyimg = gray.ThresholdTrans(new BitmapImage(new Uri(fileName))));
+            GrayThre = new RelayCommand(() => Modifyimg = gray.ThresholdTrans());
+
+            LinerTrans = new RelayCommand(() => Modifyimg = gray.LinerTrans());
 
         }
 

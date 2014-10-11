@@ -26,24 +26,24 @@ namespace Graphy
             Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 
-        private void Open_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.ShowDialog();
+        //private void Open_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+        //    dlg.ShowDialog();
 
-            MessageBox.Show(dlg.FileName);
-            Picname = dlg.FileName;
+        //    MessageBox.Show(dlg.FileName);
+        //    Picname = dlg.FileName;
 
-            Show(Picname);
-        }
+        //    Show(Picname);
+        //}
 
-        private void Show(string fileName)
-        {
-            Modify gray = new Model.Modify();
-            Uri fileUri = new Uri(fileName);
-            modify.Source = gray.GrayFilter(new BitmapImage(fileUri));
+        //private void Show(string fileName)
+        //{
+        //    Modify gray = new Model.Modify();
+        //    Uri fileUri = new Uri(fileName);
+        //    modify.Source = gray.GrayFilter(new BitmapImage(fileUri));
 
-        }
+        //}
 
     }
 }

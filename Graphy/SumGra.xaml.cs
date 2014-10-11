@@ -3,6 +3,8 @@ using System;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+using Graphy.Model;
+
 namespace Graphy
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Graphy
         {
             InitializeComponent();
 
-            
+           
         }
 
 
