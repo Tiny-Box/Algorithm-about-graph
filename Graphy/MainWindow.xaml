@@ -35,6 +35,7 @@
                     <MenuItem Header="灰度统计" Command="{Binding GraySum}" CommandParameter="{Binding FileName}"/>
                     <MenuItem Header="灰度阈值" Command="{Binding GrayThre}" CommandParameter="{Binding FileName}" />
                     <MenuItem Header="反色" Command="{Binding LinerTrans}" CommandParameter="{Binding FileName}"/>
+                    <MenuItem Header="灰度均衡" Command="{Binding Inte}" CommandParameter="{Binding FileName}"/>
                 </MenuItem>
                 <Separator/>
                 <MenuItem/>

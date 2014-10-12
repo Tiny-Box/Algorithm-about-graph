@@ -359,7 +359,8 @@ namespace Graphy.Model
             // 临时变量
             long Temp;
             // 新的灰度统计表
-            
+            byte[] NewGray = new byte[256];
+
             for (int i = 0; i < 256; i++)
             {
                 Temp = 0;
@@ -369,7 +370,14 @@ namespace Graphy.Model
                 }
 
                 // 新的灰度计算
-               
+                NewGray[i] = (byte)((Temp * 255) / (width * height));  
+            }
+
+            for (int i = 0; i < pixels.LongLength; i += 4)
+            {
+                pixels[i] = NewGray[pixels[i]];
+                pixels[i + 1] = NewGray[pixels[i + 1]];
+                pixels[i + 2] = NewGray[pixels[i + 2]];
             }
 
             WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, null,

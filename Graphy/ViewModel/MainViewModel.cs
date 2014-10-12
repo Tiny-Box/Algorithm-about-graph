@@ -54,6 +54,11 @@ namespace Graphy.ViewModel
             get;
             set;
         }
+        public RelayCommand Inte
+        {
+            get;
+            set;
+        }
 
         private string fileName = string.Empty;
         public string FileName
@@ -129,6 +134,7 @@ namespace Graphy.ViewModel
 
             LinerTrans = new RelayCommand(() => Modifyimg = gray.LinerTrans());
 
+            Inte = new RelayCommand(() => Modifyimg = gray.InteEqualize());
         }
 
         ////public override void Cleanup()
