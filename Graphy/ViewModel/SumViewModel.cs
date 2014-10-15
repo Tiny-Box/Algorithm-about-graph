@@ -76,7 +76,8 @@ namespace Graphy.ViewModel
 
         void Grayplot()
         {
-            
+
+            MessageBox.Show(Gray.Figures.Count.ToString());
 
             double Max = 0;
             double Tab = 0;
@@ -87,10 +88,6 @@ namespace Graphy.ViewModel
                 Tab = (Max > Graphy.Model.Modify.GraySum[i]) ? Tab : i;
                 Max = (Max > Graphy.Model.Modify.GraySum[i]) ? Max : Graphy.Model.Modify.GraySum[i];
             }
-            //MessageBox.Show(pixels.Length.ToString());
-            //MessageBox.Show(Max.ToString() + " " + Tab.ToString());
-            //MessageBox.Show("50 " + Graphy.Model.Modify.GraySum[50].ToString());
-            //MessageBox.Show("100 " + Graphy.Model.Modify.GraySum[100].ToString());
 
 
             PathFigure pathFigure = new PathFigure();
@@ -111,11 +108,7 @@ namespace Graphy.ViewModel
 
             pathFigure.Segments.Add(myPolyLineSegment);
 
-            //Messenger.Default.Send<PathFigure>(pathFigure, "Sum");
 
-            //MessageBox.Show("Point: " + Sum[25].X.ToString() + " " + Sum[25].Y.ToString());
-
-            _Gray.Clear();
             Gray.Figures.Add(pathFigure);
         }
 
@@ -124,10 +117,6 @@ namespace Graphy.ViewModel
         /// </summary>
         public SumViewModel()
         {
-            //Messenger.Default.Register<PathFigure>(this, "Sum", n => temp = n);
-
-
-
 
             Grayplot();
         }

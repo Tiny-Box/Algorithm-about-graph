@@ -105,7 +105,6 @@ namespace Graphy.ViewModel
 
             fileName = dlg.FileName;
 
-            gray.Cleanup();
             gray.Init(fileName);
            
             Originpic = dlg.FileName;

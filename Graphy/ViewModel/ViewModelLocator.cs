@@ -69,6 +69,7 @@ namespace Graphy.ViewModel
         /// </summary>
         public static void Cleanup()
         {
+            
         }
     }
 }

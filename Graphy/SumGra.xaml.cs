@@ -4,6 +4,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 using Graphy.Model;
+using Graphy.ViewModel;
 
 namespace Graphy
 {
@@ -19,7 +20,7 @@ namespace Graphy
         {
             InitializeComponent();
 
-           
+            Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 
 

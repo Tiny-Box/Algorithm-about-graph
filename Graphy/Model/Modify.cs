@@ -349,8 +349,8 @@ namespace Graphy.Model
             //PixelFormat pixelFormat = bitmapSource.Format;
             //// 每行的字节
             //int stride = (width * pixelFormat.BitsPerPixel + 7) / 8;
-            //// 调色板
-            //BitmapPalette Palette = new BitmapPalette(bitmapSource, 256);
+            // 调色板
+            BitmapPalette Palette = new BitmapPalette(bitmapSource, 256);
             //// 像素数组
             //byte[] pixels = new byte[stride * height];
 
@@ -370,17 +370,25 @@ namespace Graphy.Model
                 }
 
                 // 新的灰度计算
-                NewGray[i] = (byte)((Temp * 255) / (width * height));  
+                NewGray[i] = (byte)((Temp * 255) / (width * stride));  
             }
 
-            for (int i = 0; i < pixels.LongLength; i += 4)
+            //for (int i = 0; i < pixels.LongLength; i += 4)
+            //{
+            //    pixels[i] = NewGray[pixels[i]];
+            //    pixels[i + 1] = NewGray[pixels[i + 1]];
+            //    pixels[i + 2] = NewGray[pixels[i + 2]];
+            //}
+
+            for (int j = 0; j < height; j++)
             {
-                pixels[i] = NewGray[pixels[i]];
-                pixels[i + 1] = NewGray[pixels[i + 1]];
-                pixels[i + 2] = NewGray[pixels[i + 2]];
+                for (int i = 0; i < stride; i++)
+                {
+                    pixels[i] = NewGray[pixels[i]];
+                }
             }
 
-            WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, null,
+            WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, Palette,
                                  pixels, stride));
             return bitmap;
         }
