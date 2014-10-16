@@ -60,7 +60,7 @@ namespace Graphy.ViewModel
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<SumViewModel>();
+                return new SumViewModel();
             }
         }
 

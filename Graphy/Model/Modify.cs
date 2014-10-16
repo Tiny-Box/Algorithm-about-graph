@@ -25,10 +25,10 @@ namespace Graphy.Model
         private int stride = 0;
         private byte[] pixels = new byte[1];
 
-        public void Init(string filename)
+        public void Init(string fileName)
         {
 
-            bitmapSource = new BitmapImage(new Uri(filename));
+            bitmapSource = new BitmapImage(new Uri(fileName));
             // 图像的宽度和高度
             width = bitmapSource.PixelWidth;
             height = bitmapSource.PixelHeight;
@@ -309,8 +309,8 @@ namespace Graphy.Model
             //PixelFormat pixelFormat = bitmapSource.Format;
             //// 每行的字节
             //int stride = (width * pixelFormat.BitsPerPixel + 7) / 8;
-            //// 调色板
-            //BitmapPalette Palette = new BitmapPalette(bitmapSource, 256);
+            // 调色板
+            BitmapPalette Palette = new BitmapPalette(bitmapSource, 256);
             //// 像素数组
             //byte[] pixels = new byte[stride * height];
 
@@ -334,7 +334,7 @@ namespace Graphy.Model
 
             }
 
-            WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, null,
+            WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, Palette,
                                              pixels, stride));
             return bitmap;
         }
@@ -380,17 +380,17 @@ namespace Graphy.Model
             //    pixels[i + 2] = NewGray[pixels[i + 2]];
             //}
 
-            for (int j = 0; j < height; j++)
-            {
-                for (int i = 0; i < stride; i++)
-                {
-                    pixels[i] = NewGray[pixels[i]];
-                }
-            }
+            //for (int j = 0; j < height; j++)
+            //{
+            //    for (int i = 0; i < stride; i++)
+            //    {
+            //        pixels[i] = (byte)(255 - NewGray[pixels[i]]);
+            //    }
+            //}
 
-            WriteableBitmap bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, Palette,
-                                 pixels, stride));
-            return bitmap;
+            WriteableBitmap Bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, Palette,
+                                             pixels, stride));
+            return Bitmap;
         }
     }
 }

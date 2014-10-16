@@ -77,7 +77,6 @@ namespace Graphy.ViewModel
         void Grayplot()
         {
 
-            MessageBox.Show(Gray.Figures.Count.ToString());
 
             double Max = 0;
             double Tab = 0;
