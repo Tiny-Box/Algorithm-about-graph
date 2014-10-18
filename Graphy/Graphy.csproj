@@ -76,16 +76,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Modify.cs" />
+    <Compile Include="Model\PointOperation.cs" />
+    <Compile Include="DialogPanel.cs" />
+    <Compile Include="DragHelper.cs" />
+    <Compile Include="myUserControl\myTestUC.xaml.cs">
+      <DependentUpon>myTestUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SumGra.xaml.cs">
       <DependentUpon>SumGra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BaseUserControl.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SumViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="myUserControl\myTestUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Skins\MainSkin.xaml">
       <SubType>Designer</SubType>

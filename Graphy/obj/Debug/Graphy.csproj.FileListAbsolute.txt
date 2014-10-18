@@ -54,3 +54,5 @@ C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.Properti
 C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\Graphy.csproj.GenerateResource.Cache
 C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\SumGra.baml
 C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\SumGra.g.cs
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\myUserControl\myTestUC.baml
+C:\Users\Box\Source\Repos\Algorithm-about-graph\Graphy\obj\Debug\myUserControl\myTestUC.g.cs

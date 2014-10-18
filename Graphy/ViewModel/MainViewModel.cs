@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 using Graphy.Model;
+using Graphy.myUserControl;
 
 namespace Graphy.ViewModel
 {
@@ -55,6 +56,11 @@ namespace Graphy.ViewModel
             set;
         }
         public RelayCommand Inte
+        {
+            get;
+            set;
+        }
+        public RelayCommand Pop
         {
             get;
             set;
@@ -111,7 +117,7 @@ namespace Graphy.ViewModel
             Originpic = dlg.FileName;
         }
 
-        Modify gray = new Modify();
+        PointOperation gray = new PointOperation();
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -135,6 +141,8 @@ namespace Graphy.ViewModel
             LinerTrans = new RelayCommand(() => Modifyimg = gray.LinerTrans());
 
             Inte = new RelayCommand(() => Modifyimg = gray.InteEqualize());
+
+            Pop = new RelayCommand(() => { myTestUC uc = new myTestUC("Test!"); uc.Show(); });
         }
 
         ////public override void Cleanup()

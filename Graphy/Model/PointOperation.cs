@@ -11,7 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace Graphy.Model
 {
-    class Modify
+    class PointOperation
     {
         public static long[] GraySum  = new long[256];
         public static long[] RedSum   = new long[256];
@@ -24,6 +24,7 @@ namespace Graphy.Model
         private PixelFormat pixelFormat = new PixelFormat();
         private int stride = 0;
         private byte[] pixels = new byte[1];
+        private byte gray = 0;
 
         public void Init(string fileName)
         {
@@ -60,8 +61,8 @@ namespace Graphy.Model
             }
             for (int i = 0; i < pixels.Length; i += 4)
             {
-                byte gray = (byte)(0.299 * pixels[i] + 0.587 * pixels[i + 1] + 0.114 * pixels[i + 2]);
-                pixels[i] = gray;
+                gray = (byte)(0.299 * pixels[i] + 0.587 * pixels[i + 1] + 0.114 * pixels[i + 2]);
+                //pixels[i] = gray;
                 GraySum[pixels[i]] += 3;
             }
         }
@@ -352,10 +353,10 @@ namespace Graphy.Model
             // 调色板
             BitmapPalette Palette = new BitmapPalette(bitmapSource, 256);
             //// 像素数组
-            //byte[] pixels = new byte[stride * height];
+            //byte[] Pixels = new byte[stride * height];
 
-            //// 复制像素到像素数组
-            //bitmapSource.CopyPixels(Int32Rect.Empty, pixels, stride, 0);
+            // 复制像素到像素数组
+            bitmapSource.CopyPixels(Int32Rect.Empty, pixels, stride, 0);
             // 临时变量
             long Temp;
             // 新的灰度统计表
@@ -380,13 +381,14 @@ namespace Graphy.Model
             //    pixels[i + 2] = NewGray[pixels[i + 2]];
             //}
 
-            //for (int j = 0; j < height; j++)
-            //{
-            //    for (int i = 0; i < stride; i++)
-            //    {
-            //        pixels[i] = (byte)(255 - NewGray[pixels[i]]);
-            //    }
-            //}
+            for (int j = 0; j < height; j++)
+            {
+                for (int i = 0; i < stride; i++)
+                {
+                    //pixels[i] = (byte)(255 - NewGray[pixels[i]]);
+                    pixels[i] = (byte)0;
+                }
+            }
 
             WriteableBitmap Bitmap = new WriteableBitmap(BitmapSource.Create(width, height, bitmapSource.DpiX, bitmapSource.DpiY, pixelFormat, Palette,
                                              pixels, stride));

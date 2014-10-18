@@ -82,10 +82,10 @@ namespace Graphy.ViewModel
             double Tab = 0;
 
             // 取最大值
-            for (int i = 0; i < Graphy.Model.Modify.GraySum.Length; i++)
+            for (int i = 0; i < Graphy.Model.PointOperation.GraySum.Length; i++)
             {
-                Tab = (Max > Graphy.Model.Modify.GraySum[i]) ? Tab : i;
-                Max = (Max > Graphy.Model.Modify.GraySum[i]) ? Max : Graphy.Model.Modify.GraySum[i];
+                Tab = (Max > Graphy.Model.PointOperation.GraySum[i]) ? Tab : i;
+                Max = (Max > Graphy.Model.PointOperation.GraySum[i]) ? Max : Graphy.Model.PointOperation.GraySum[i];
             }
 
 
@@ -95,12 +95,12 @@ namespace Graphy.ViewModel
             double Yr = (300 - 0) / (0 - Max);
             Matrix matrix1 = new Matrix(Xr, 0, 0, Yr, 0, 300);
 
-            Point[] Sum = new Point[Graphy.Model.Modify.GraySum.Length];
+            Point[] Sum = new Point[Graphy.Model.PointOperation.GraySum.Length];
             for (int i = 0; i < 256; i++)
             {
-                Sum[i] = Point.Multiply(new Point(i, Graphy.Model.Modify.GraySum[i]), matrix1);
+                Sum[i] = Point.Multiply(new Point(i, Graphy.Model.PointOperation.GraySum[i]), matrix1);
             }
-            pathFigure.StartPoint = Point.Multiply(new Point(0, Graphy.Model.Modify.GraySum[0]), matrix1);
+            pathFigure.StartPoint = Point.Multiply(new Point(0, Graphy.Model.PointOperation.GraySum[0]), matrix1);
             //MessageBox.Show(pathFigure.StartPoint.X.ToString() + " " + pathFigure.StartPoint.Y.ToString());
             PolyLineSegment myPolyLineSegment = new PolyLineSegment();
             myPolyLineSegment.Points = new PointCollection(Sum);
